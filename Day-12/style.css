@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+* {
+  font-family: "Syne", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+main {
+  padding-top: 3rem;
+  width: 100%;
+  border: 2px solid black;
+}
+
+.view-1 {
+  width: 100%;
+  padding: 1.2rem;
+}
+.view-1 p {
+  font-weight: 200;
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+.view-1 h1 {
+  width: 70%;
+  font-size: 4rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.view-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.line {
+  border: 1px solid black;
+}
+
+.view-2 {
+  width: 100%;
+  padding-top: 1rem;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.view-2 p {
+  font-weight: 200;
+  opacity: 0.8;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.view-2 h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.view-2 button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 300;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+.view-2 .border {
+  border: 1px solid black;
+}
+.view-2 .line {
+  border: 1px solid black;
+}
+.view-2 .heading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.view-2 .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.view-2 .right .item1 {
+  width: 100%;
+}
+.view-2 .right .item1 h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.view-2 .right .item1 svg {
+  width: 4rem;
+  aspect-ratio: 1/1;
+}
+
+.view-3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+.view-3 br {
+  display: none;
+}
+.view-3 .line {
+  border: 1px solid black;
+}
+.view-3 .border {
+  border: 1px solid black;
+}
+.view-3 .left {
+  width: 100%;
+  padding-top: 2rem;
+}
+.view-3 .left h1 {
+  font-size: 3rem;
+}
+.view-3 .left p {
+  font-weight: 200;
+  opacity: 0.8;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+.view-3 .right {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+.view-3 .item1 {
+  width: 100%;
+}
+.view-3 .item1 video {
+  border-radius: 1rem;
+  width: 100%;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+@media (min-width: 1020px) {
+  main {
+    padding: 3rem;
+  }
+  .view-1 h1 {
+    font-size: 6rem;
+    width: 100%;
+  }
+  .view-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .view-2 h1 {
+    font-size: 5rem;
+  }
+  .view-2 .right {
+    width: 70%;
+  }
+  .view-2 .right .item1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .view-2 .right .item1 h2 {
+    font-size: 2rem;
+  }
+  .view-2 .right .item1 svg {
+    width: 4rem;
+    aspect-ratio: 1/1;
+  }
+  .view-2 .right .item1 p {
+    font-weight: 200;
+    opacity: 0.8;
+    font-size: 1.5rem;
+  }
+  .view-3 {
+    flex-direction: row;
+  }
+  .view-3 br {
+    display: block;
+  }
+  .view-3 .heading {
+    position: sticky;
+    top: 2rem;
+  }
+  .view-3 .left {
+    width: 50%;
+  }
+  .view-3 .right {
+    padding-left: 2.5rem;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .view-3 .right h3 {
+    font-size: 2rem;
+  }
+  .view-3 .right p {
+    font-size: 1.2rem;
+    font-weight: 200;
+    opacity: 0.8;
+  }
+}/*# sourceMappingURL=style.css.map */

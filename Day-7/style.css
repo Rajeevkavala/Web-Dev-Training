@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+html{
+    font-size: 16px;
+}
+
+/* 
+.parent{
+    height: 400px;
+    width: 50%;
+    background-color: coral;
+}
+
+.child{
+    height: 100px;
+    width: 90%;
+    background-color: rgb(238, 0, 0);
+} */
+
+
+/* 1rem = 16px; */
+
+/* 
+h1{
+    font-size: 2rem;
+} 
+    */
+/* 
+
+
+.child{
+    font-size: 50px;
+} */
+
+/* 
+
+
+h1{
+    font-size: 2em; this depends on the parent element
+} */
+
+
+.parent{ 
+    height: 100vh; /* 100% of the viewport height This should be given to parent only */
+    width: 100vw; /* 100% of the viewport width This should be given to parent only */
+    background-color: peachpuff;
+}
+
+

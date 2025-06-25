@@ -1,0 +1,197 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1742a0;
+    --bg: #f4f6fb;
+    --white: #fff;
+    --text: #222e3a;
+    --muted: #6b7280;
+    --card-bg: #f8fbff;
+    --shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.landing-grid {
+    display: grid;
+    grid-template-areas:
+        "hero"
+        "features"
+        "testimonials"
+        "footer";
+    grid-template-rows: auto 1fr auto auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.hero {
+    grid-area: hero;
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 64px 24px 48px 24px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+    color: #dbeafe;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary);
+    font-weight: 600;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.cta-btn:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.features {
+    grid-area: features;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    padding: 48px 32px;
+    background: var(--bg);
+}
+
+.feature-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    padding: 32px 20px;
+    text-align: center;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+.feature-card:hover {
+    box-shadow: 0 6px 24px rgba(37,99,235,0.12);
+    transform: translateY(-4px) scale(1.03);
+}
+.feature-card h2 {
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+.feature-card p {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.testimonials {
+    grid-area: testimonials;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 48px 32px;
+    background: var(--white);
+}
+
+.testimonial-card {
+    background: var(--bg);
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    padding: 28px 18px;
+    font-style: italic;
+    color: var(--text);
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+.testimonial-card:hover {
+    box-shadow: 0 6px 24px rgba(37,99,235,0.10);
+    transform: translateY(-3px) scale(1.02);
+}
+.testimonial-card span {
+    display: block;
+    margin-top: 16px;
+    color: var(--primary);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 1rem;
+}
+.contact-info {
+    margin-bottom: 8px;
+}
+.social-links a {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-left: 18px;
+    text-decoration: none;
+    transition: color 0.18s;
+}
+.social-links a:hover {
+    color: #dbeafe;
+}
+
+@media (max-width: 900px) {
+    .landing-grid {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .features, .testimonials {
+        padding: 32px 10px;
+        gap: 18px;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 10px;
+        
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 38px 8px 28px 8px;
+    }
+    .features, .testimonials {
+        grid-template-columns: 1fr;
+        padding: 18px 4vw;
+    }
+    .feature-card, .testimonial-card {
+        padding: 18px 8px;
+    }
+    .footer {
+        font-size: 0.98rem;
+        padding: 12px 4vw;
+    }
+}

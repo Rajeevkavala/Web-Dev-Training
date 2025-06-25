@@ -1,0 +1,134 @@
+:root {
+    --sidebar-bg: #f4f6fb;
+    --main-bg: #fff;
+    --border: #e0e4ea;
+    --accent: #2563eb;
+    --text: #222e3a;
+    --muted: #6b7280;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--sidebar-bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.blog-layout {
+    display: grid;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 1fr 3fr;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: var(--main-bg);
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: var(--sidebar-bg);
+    padding: 32px 24px;
+    border-right: 1px solid var(--border);
+    min-width: 220px;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li + li {
+    margin-top: 12px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.18s;
+}
+
+.sidebar a:hover {
+    color: var(--accent);
+}
+
+.main-content {
+    grid-area: main;
+    padding: 40px 36px;
+    background: var(--main-bg);
+}
+
+.main-content article + article {
+    margin-top: 32px;
+}
+
+.main-content h1, .main-content h2 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .blog-layout {
+        grid-template-areas:
+            "sidebar"
+            "main";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        margin: 24px 10px;
+    }
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        min-width: 0;
+        padding: 28px 18px;
+    }
+    .main-content {
+        padding: 28px 14px;
+    }
+}
+
+/* Mobile: hide sidebar, main takes full width */
+@media (max-width: 767px) {
+    .blog-layout {
+        grid-template-areas: "main";
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        padding: 18px 6vw;
+    }
+}
+
+/* Bonus: fluid/adaptive columns for extra responsiveness */
+@media (min-width: 1200px) {
+    .blog-layout {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}

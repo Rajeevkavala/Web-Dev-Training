@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+}
+
+.product-container{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 220px;
+    background-color: #f8fbff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 22px 18px 18px 18px;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.product h2 {
+    font-size: 1.15rem;
+    color: #222e3a;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product p {
+    color: #3a4a5d;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.product button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.15s;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.08);
+}
+
+.product button:hover {
+    background: #1742a0;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.product:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(37,99,235,0.12);
+}
+
+@media (min-width:1024px){
+    .products{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        justify-items: center;
+        align-items: start;
+    }
+}
+
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-container {
+        padding: 16px 0;
+    }
+    .products {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .product {
+        width: 95vw;
+        max-width: 340px;
+        padding: 14px 8px 12px 8px;
+    }
+}
+

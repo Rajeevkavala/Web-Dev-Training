@@ -1,57 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html,body{
+    font-family: "Inter", sans-serif;
     height: 100%;
     width: 100%;
 }
-html{
+
+.netflix-nav{
+    width: 100%;
+    position: absolute;
+    top:-40px;
+    padding: 0 5rem;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8000) 0.000%, rgba(0, 0, 0, 0.7889) 8.333%, rgba(0, 0, 0, 0.7556) 16.67%, rgba(0, 0, 0, 0.7000) 25.00%, rgba(0, 0, 0, 0.6222) 33.33%, rgba(0, 0, 0, 0.5222) 41.67%, rgba(0, 0, 0, 0.4000) 50.00%, rgba(0, 0, 0, 0.2778) 58.33%, rgba(0, 0, 0, 0.1778) 66.67%, rgba(0, 0, 0, 0.1000) 75.00%, rgba(0, 0, 0, 0.04444) 83.33%, rgba(0, 0, 0, 0.01111) 91.67%, rgba(0, 0, 0, 0.000) 100.0%
+    );
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img{
+    width: 150px;
+    
+}
+
+.select-btn {
+    position: relative;
+    display: inline-block;
+}
+.select-btn select {
+    width: 150px; /* adjust as needed */
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
     font-size: 16px;
 }
-
-/* 
-.parent{
-    height: 400px;
-    width: 50%;
-    background-color: coral;
+.icon-container {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
 }
 
-.child{
-    height: 100px;
-    width: 90%;
-    background-color: rgb(238, 0, 0);
-} */
+.select-btn select {
+    padding-left: 40px; /* adjust for icon width */
+    height: 32px; /* adjust as needed */
+}
 
+.buttons{
+    display: flex;;
+    align-items: center;
+    gap: 1rem;
+}
 
-/* 1rem = 16px; */
-
-/* 
-h1{
-    font-size: 2rem;
-} 
-    */
-/* 
-
-
-.child{
-    font-size: 50px;
-} */
-
-/* 
-
-
-h1{
-    font-size: 2em; this depends on the parent element
-} */
-
-
-.parent{ 
-    height: 100vh; /* 100% of the viewport height This should be given to parent only */
-    width: 100vw; /* 100% of the viewport width This should be given to parent only */
-    background-color: peachpuff;
+.sign-in-btn button{
+    background-color: #C11119;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 
+.main-content{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/Day-7/Netflix.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+
+.hero-section h1{
+    font-size: 4rem;
+}
+
+.pricing{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.extra-info-heading{
+    font-size: 1rem;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.Email-address{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(8.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.Email-address:focus{
+    outline: none;
+    border: 1px solid #C11119;
+}
+
+
+.input-and-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.get-started-btn button{
+    background-color: #C11119;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-btn button:hover{
+    background-color: #A10F16;
+}
+
+.Get-started{
+    display: flex;
+}
+
+.banner {
+  position: relative;
+  height: 100px; /* Adjust height as needed */
+  background-color: #1a1f2e; /* Dark navy base color */
+  overflow: hidden;
+}
+
+.banner .gradient-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px; 
+  background: linear-gradient(to right, #ff2e63, #8a2be2); /* Red to purple gradient */
+  transform: translateY(-50%);
+}
+
+.movies-sections{
+    width: 100%;
+    height: 100%;
+
+}

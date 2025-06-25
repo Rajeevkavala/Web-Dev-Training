@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Education</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+      color: #101419;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #e9edf1;
+      background-color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #101419;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background-color: #e9edf1;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-icon svg {
+      fill: #101419;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px 40px;
+      background-color: white;
+    }
+
+    .intro {
+      margin-bottom: 20px;
+    }
+
+    .intro h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #58728d;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+      </svg>
+      <h2>RajeevHub</h2>
+    </div>
+    <nav>
+      <a href="#">Courses</a>
+      <a href="#">Paths</a>
+      <a href="#">Resources</a>
+      <a href="#">Community</a>
+      <div class="buttons">
+        <button class="btn-icon" title="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+            <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+          </svg>
+        </button>
+        <button class="btn-icon" title="Bookmark">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+            <path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,16V161.57l-51.77-32.35a8,8,0,0,0-8.48,0L72,161.56V48ZM132.23,177.22a8,8,0,0,0-8.48,0L72,209.57V180.43l56-35,56,35v29.14Z"></path>
+          </svg>
+        </button>
+        <div
+          class="avatar"
+          style="background-image: url('/Day-5&6/Education/Rajeev.jpg');">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <h1>HTML Fundamentals</h1>
+      <p>
+        Dive into the core of web development with a comprehensive guide to HTML. Learn its history, key elements, and how it structures the web with enhanced CSS styling
+        for a modern look.
+      </p>
+    </div>
+
+    <h3>What is HTML?</h3>
+    <p>
+      HTML, or HyperText Markup Language, is the standard markup language for documents designed to be displayed in a web browser. It defines the structure of web pages
+      using a variety of tags and elements.
+    </p>
+
+    <h3>History of HTML</h3>
+    <p>
+      HTML was first developed by Timothy Bennett in 1990. Since then, it has undergone several revisions and has become the backbone of the World Wide Web. Key milestones
+      include HTML 2.0, HTML 3.2, HTML 4.01, and the current standard, HTML5.
+    </p>
+
+    <h3>Key HTML Elements</h3>
+    <p>
+      HTML documents are composed of elements, which are defined by tags. Common elements include headings (&lt;h1&gt; to &lt;h6&gt;), paragraphs (&lt;p&gt;), links
+      (&lt;a&gt;), images (&lt;img&gt;), lists (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;), and divisions (&lt;div&gt;).
+    </p>
+
+    <h3>HTML5 and Beyond</h3>
+    <p>
+      HTML5 introduced many new elements and features, such as &lt;article&gt;, &lt;aside&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer&gt;, and
+      &lt;canvas&gt;, enhancing the semantic structure and capabilities of web pages.
+    </p>
+
+    <h3>Further Resources</h3>
+    <p>
+      For more in-depth information, consider exploring the official HTML documentation and various online tutorials. Practice building simple web pages to solidify your
+      understanding of HTML.
+    </p>
+  </div>
+</body>
+</html>

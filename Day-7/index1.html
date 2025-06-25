@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box-model{
+            border: 10px solid black;
+            padding: 50px;
+            width: 900px;
+            background-color: #840000c0;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box-model">
+        <h1>CSS Box Model</h1>
+        <p>The CSS box model describes the rectangular boxes generated for elements in the document tree and how they interact with each other.</p>
+        <ul>
+            <li><strong>Content:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corrupti, deserunt dolore, ratione perferendis tempore rem, inventore doloremque commodi aperiam optio aliquid laborum laboriosam quo accusamus. Dicta facilis repellendus deleniti!The actual content of the box, where text and images appear.</li>
+            <li><strong>Padding:</strong> Space between the content and the border, inside the box.</li>
+            <li><strong>Border:</strong> A line surrounding the padding (if any) and content.</li>
+            <li><strong>Margin:</strong> Space outside the border, separating the box from other boxes.</li>
+        </ul>
+    </div>
+</body>
+</html>

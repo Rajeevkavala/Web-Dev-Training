@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .user-password {
+        font-size: 20px;
+        text-align: center;
+      }
+      label {
+        font-size: 25px;
+        margin-block: 10px;
+      }
+      input {
+        font-size: 25px;
+        margin: 5px;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      textarea {
+        font-size: 20px;
+      }
+      fieldset {
+        width: fit-content;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="/submit">
+      <div class="user-password">
+        <h1>Login Form</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr />
+      </div>
+      <label for="text" id="UserName">UserName: </label><br />
+      <input
+        type="text"
+        placeholder="Enter Your Username"
+        name="name"
+        id="name"
+      />
+      <br />
+      <label for="password" id="password">Password: </label><br />
+      <input
+        type="password"
+        placeholder="Enter Your Password"
+        name="password"
+        id="password"
+      />
+      <br />
+
+      <label for="gender" id="gender"> Gender: </label>
+      <br />
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label><br />
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="male">Female</label>
+
+      <br />
+      <label for="hobbies">Hobbies:</label><br />
+      <input type="checkbox" id="hobbie1" name="hobbie1" value="Reading" />
+      <label for="hobbie1">Reading</label><br />
+      <input type="checkbox" id="hobbie2" name="hobbie2" value="Travelling" />
+      <label for="hobbie2"> Travelling</label><br />
+      <input
+        type="checkbox"
+        id="hobbie3"
+        name="hobbie3"
+        value="Watching Movies"
+      />
+      <label for="vehicle3"> Watching Movies</label>
+
+      <br />
+
+      <label for="Country">Country:</label>
+      <select id="Country" name="Country">
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="India">India</option>
+        <option value="Ukraine">Ukraine</option>
+      </select>
+
+      <br />
+      <label for="Comments">Comments: </label>
+      <br />
+      <textarea
+        name="message"
+        rows="10"
+        cols="30"
+        placeholder="Enter your Comments"
+      >
+      </textarea>
+
+      <fieldset>
+        <legend>Other Information:</legend>
+        <label for="dob">Date of Birth: </label>
+        <input type="date" id="dob" name="dob" />
+        <br />
+        <label for="address">Address: </label> <br />
+        <textarea
+          name="message"
+          rows="10"
+          cols="30"
+          placeholder="Enter your Address"
+        >
+        </textarea>
+      </fieldset>
+      <br />
+      <button type="submit" id="submit" name="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <style>
+        table{
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        .table-details{
+            font-size: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 50px;
+        }
+        tr,td,th{
+            font-size: 30px;
+            padding: 5px;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        .headings{
+            background-color: rgba(56, 114, 241, 0.413);
+        }
+    </style>
+</head>
+<body>
+    <h1>III Year B.Tech - I SEM Time Table for Academic Year 2025-2026</h1>
+    <div class="table-details">
+        
+        <p>Course: <b>B.Tech-CSE(AI&ML)</b></p>
+        <p>Section: <b>Alpha</b></p>
+        <p>Room No: <b>2-205</b></p>
+    </div>
+        <table>
+            <tr class="headings">
+                <th>DAY/TIME</th>
+                <th>9:10 am - 10:20 am</th>
+                <th>10:20 am - 11:20 am</th>
+                <th>11:20 am - 11:30 am</th>
+                <th>11:30 am - 12:30 pm</th>
+                <th>12:30 pm - 1:20 pm</th>
+                <th>1:20 pm - 2:10 pm</th>
+                <th>2:10 pm - 3:00 pm</th>
+                <th>3:00 pm - 3:50 pm</th>
+            </tr>
+            <tr>
+                <th>MON</th>
+                <td>RPA</td>
+                <td>MML</td>
+                <td class="short" rowspan="6">
+                   SHORT BREAK
+                </td>
+                <td>DLT</td>
+                <td rowspan="6">
+                    LUNCH BREAK
+                </td>
+                <td colspan="2">ACD-LAB</td>
+                <td>Club/Library</td>
+            </tr>
+            <tr>
+                <th>TUE</th>
+                <td>MML</td>
+                <td>ACD</td>
+                <td>AJP</td>
+                <td>RPA</td>
+                <td>DLT</td>
+                <td>BIA</td>
+            </tr>
+            <tr>
+                <th>WED</th>
+                <td>ACD</td>
+                <td>RPA</td>
+                <td>MML</td>
+                <td>DLT</td>
+                <td>BIA</td>
+                <td>Club/Sports</td>
+            </tr>
+            <tr>
+                <th>THU</th>
+                <td>BIA</td>
+                <td>MML</td>
+                <td>RPA</td>
+                <td colspan="2">AJP-LAB</td>
+                <td>BIA</td>
+            </tr>
+            <tr>
+                <th>FRI</th>
+                <td>AJP</td>
+                <td>RPA</td>
+                <td>ACD</td>
+                <td colspan="2">DLT-LAB</td>
+                <td>MML</td>
+            </tr>
+            <tr>
+                <th>SAT</th>
+                <td>DLT</td>
+                <td>ACD</td>
+                <td>AJP</td>
+                <td>BIA</td>
+                <td>MML</td>
+                <td>RPA</td>
+            </tr>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #EFEFEF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-card {
+            width: 400px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid#000000;
+        }
+        .profile-card img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+        .profile-name {
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        .profile-bio {
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .follow-button{
+            background-color: #295ce7;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            left: 850px;
+            bottom: 60px;
+        }
+        .follow-button:hover {
+            background-color: #1a4bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="/Day-7/bhAAi Laugh.gif" alt="Profile Picture" class="profile-picture">
+        <h2 class="profile-name">Allu Arjun</h2>
+        <p class="profile-bio">Allu Arjun is an Indian actor who works in Telugu cinema. He is one of the highest-paid actors in Indian cinemaand has been featured in Forbes India's Celebrity 100 list since 2014. Allu Arjun's accolades include a National Film Award, six Filmfare Awards, and three Nandi Awards.</p>
+        <button class="follow-button">Follow</button>
+    </div>
+</body>
+</html>

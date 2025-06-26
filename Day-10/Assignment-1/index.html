@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-card {
+            width: 400px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: #181A1B;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transition: all 0.5s ease;
+        }
+        .profile-card img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1s ease;
+        }
+        .profile-card img:hover {
+            transform: rotate(360deg);
+        }
+        .profile-name {
+            font-size: 24px;
+            color: #fcfcfc;
+            margin-bottom: 10px;
+        }
+        .profile-bio {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding: 25px;
+            line-height: 1.2;
+            text-align: justify;
+            
+        }
+        .profile-card:hover {
+            box-shadow: 0px 0px 50px rgb(0, 195, 255);
+            transform: scale(1.05);
+        }
+        .follow-button{
+            background-color: #295ce7;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .follow-button:hover {
+            background-color: #1a4bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="/Assignment-1/bhAAi Laugh.gif" alt="Profile Picture" class="profile-picture">
+        <h2 class="profile-name">Allu Arjun</h2>
+        <p class="profile-bio">Allu Arjun is an Indian actor who works in Telugu cinema. He is one of the highest-paid actors in Indian cinemaand has been featured in Forbes India's Celebrity 100 list since 2014. Allu Arjun's accolades include a National Film Award, six Filmfare Awards, and three Nandi Awards.</p>
+        <button class="follow-button">Follow</button>
+    </div>
+</body>
+</html>

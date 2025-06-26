@@ -32,7 +32,7 @@ body{
 }
 .divs{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     font-size: 2rem;
     align-items: center;
@@ -103,4 +103,48 @@ button:hover{
     -moz-transform: scale(1.05);
     -ms-transform: scale(1.05);
     -o-transform: scale(1.05);
+}
+
+
+.line{
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    width: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: 1s all ease;
+    -webkit-transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    -ms-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    animation: bounce 0.9s infinite linear;
+    -webkit-animation: bounce 0.9s infinite linear;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/25/25231.png');
+    background-size: cover;
+}
+
+.line:hover{
+    scale: 1.2;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% { transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); }
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+
+.india-flag{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
 }

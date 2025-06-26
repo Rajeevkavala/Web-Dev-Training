@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #022C24;
+
+}
+
+.image-container{
+    height: 100%;
+    width: 550px;
+    background: url("/Assignment-3/iphone.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.photo-container{
+    border-radius: 43px;
+    height: 632px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 43px;
+    -moz-border-radius: 43px;
+    -ms-border-radius: 43px;
+    -o-border-radius: 43px;
+}
+.icons{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.icons img{
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%);
+
+}
+
+.time{
+    margin-left: 15px;
+}

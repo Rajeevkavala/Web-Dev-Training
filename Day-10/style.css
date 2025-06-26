@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    background-color: black;
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-field a{
+    color: white;
+    text-decoration: none;
+    font-size: 3.5rem;
+    transition: 0.3s all ease;
+}
+.input-field a:active{
+    color: rgb(51, 232, 87);
+}
+.divs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 2rem;
+    align-items: center;
+}
+.div{
+    background-color: blanchedalmond;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+}
+
+input{
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    padding: 10px;
+}
+.div:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: rgb(51, 232, 87);
+    color: black;
+}
+.div:first-child{
+    background-color: red;
+}
+.div:last-child{
+    background-color: rgb(8, 94, 255);
+}
+.div:nth-child(3){
+    background-color: rgb(255, 2, 238);
+}
+input:focus{
+    border: 1px solid #00ff00;
+}
+
+button{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-size: 2rem;
+    border: 1px solid rgb(51, 232, 87);
+    outline: none;
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background-color: rgb(51, 232, 87);
+    color: rgb(255, 0, 0);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}

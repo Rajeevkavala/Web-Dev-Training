@@ -22,7 +22,7 @@ body {
 
 .blog-layout {
     display: grid;
-    grid-template-areas: "sidebar main";
+    grid-template-areas: "sidebar main main main";
     grid-template-columns: 1fr 3fr;
     max-width: 1200px;
     margin: 40px auto;
@@ -109,7 +109,6 @@ body {
     }
 }
 
-/* Mobile: hide sidebar, main takes full width */
 @media (max-width: 767px) {
     .blog-layout {
         grid-template-areas: "main";
@@ -126,7 +125,6 @@ body {
     }
 }
 
-/* Bonus: fluid/adaptive columns for extra responsiveness */
 @media (min-width: 1200px) {
     .blog-layout {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

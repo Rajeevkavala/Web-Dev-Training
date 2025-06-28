@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 12 Assignments - JS Control Flow & Loops</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #6200ee;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4500c2;
+    }
+    #output {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      min-height: 50px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Day 12: Control Flow & Loops Assignments</h1>
+
+  <div class="btn-container">
+    <button onclick="calculator()">1️⃣ Simple Calculator</button>
+    <button onclick="printPattern()">2️⃣ Pattern Printing</button>
+    <button onclick="studentGrading()">3️⃣ Student Grading</button>
+    <button onclick="sumEvenNumbers()">4️⃣ Sum of Even Numbers (1-100)</button>
+    <button onclick="factorialCalculator()">5️⃣ Factorial Calculator</button>
+  </div>
+
+  <div id="output"></div>
+
+  <script>
+    function calculator() {
+      const num1 = parseFloat(prompt("Enter first number:"));
+      const operator = prompt("Enter operator (+, -, *, /):");
+      const num2 = parseFloat(prompt("Enter second number:"));
+      let result;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers.";
+      } else {
+        switch (operator) {
+          case '+': result = num1 + num2; break;
+          case '-': result = num1 - num2; break;
+          case '*': result = num1 * num2; break;
+          case '/': result = num2 !== 0 ? num1 / num2 : "Cannot divide by 0"; break;
+          default: result = "Invalid operator!";
+        }
+      }
+
+      document.getElementById("output").innerText = `Result: ${result}`;
+    }
+
+    function printPattern() {
+      let output = "";
+      for (let i = 1; i <= 5; i++) {
+        output += "*".repeat(i) + "\n";
+      }
+      document.getElementById("output").innerText = output;
+    }
+
+    function studentGrading() {
+      const marks = parseInt(prompt("Enter student marks (0-100):"));
+      let grade = "";
+
+      if (marks >= 90 && marks <= 100) grade = "A";
+      else if (marks >= 75) grade = "B";
+      else if (marks >= 60) grade = "C";
+      else if (marks >= 40) grade = "D";
+      else if (marks >= 0) grade = "F";
+      else grade = "Invalid marks";
+
+      document.getElementById("output").innerText = `Marks: ${marks}\nGrade: ${grade}`;
+    }
+
+    function sumEvenNumbers() {
+      let sum = 0;
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 === 0) sum += i;
+      }
+      document.getElementById("output").innerText = `Sum of even numbers from 1 to 100: ${sum}`;
+    }
+
+    function factorialCalculator() {
+      const num = parseInt(prompt("Enter a number:"));
+      let factorial = 1;
+      if (isNaN(num) || num < 0) {
+        document.getElementById("output").innerText = "Please enter a non-negative integer.";
+        return;
+      }
+
+      let i = num;
+      while (i > 1) {
+        factorial *= i;
+        i--;
+      }
+
+      document.getElementById("output").innerText = `Factorial of ${num} is: ${factorial}`;
+    }
+  </script>
+</body>
+</html>

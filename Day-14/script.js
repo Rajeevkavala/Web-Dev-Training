@@ -71,5 +71,3 @@ console.log("After Adding: ");
 console.log(cart);
 
 
-
-

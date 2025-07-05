@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color: #333;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+
+}
+
+/* Enhance todo-container styling */
+#todo-container {
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid #55596b;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Style input box */
+#input-box {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/* Style input button */
+#input-button {
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e60ea;
+    color: #fff;
+}
+
+#input-button:hover {
+    background-color: #9eb7fd;
+}
+
+/* Style list items */
+li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Style buttons */
+.edit-btn,
+.delete-btn {
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f44336;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    border: 1px solid gray;
+}
+
+/* Add animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+footer i {
+    color: red;
+}

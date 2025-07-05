@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000000;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <div id="x">Welcome to Malla Reddy Sweets</div>
+        <div id="box">Box Content</div>
+        <button onclick="changeBox()">First Box</button>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <h2>Title 1</h2>
+        <h2>Title 2</h2>
+        <p class="note">First Note</p>
+        <p class="note">Second Note</p>
+        <button onclick="changeText()">Click Me</button>
+        <button onclick="changeColor()">changeColor</button>
+        <br>
+        <br>
+        <button class="eventLister">
+            Event Listener Button
+        </button>
+        <button class="DoubleClickEventLister">
+            Double Click Event Listener Button
+        </button>
+        <br><br>
+        <div id="hoverBox" style="width:150px;height:100px;background:lightblue;color:black;display:flex;align-items:center;justify-content:center">Hover over me</div>
+        <!-- Captions added for better understanding -->
+        <p>Click "First Box" to change the content and style of the box with id "box".</p>
+        <p>Click "Click Me" to change the text of the element with id "x".</p>
+        <p>Click "changeColor" to change the color of the text in the element with id "x".</p>
+        <p>
+            Click the "Event Listener Button" to trigger an alert and change the box content.</p>
+        </p>
+        <p>Double click the "Double Click Event Listener Button" to trigger an alert.</p>
+        <p>Hover over the blue box to change its background color.</p>
+    </div>
+    <div class="right">
+        <label for="username">Name: </label>
+        <input type="text" id="username" name="username" placeholder="Enter your name" required>
+        <br>
+        <br>
+        <label for="email">E-Mail: </label>
+        <input type="text" id="email" name="email"
+        placeholder="Enter your email"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
+        <button id="submitBtn">Submit</button>
+        <p id="msg"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather Application</h1>
+    <p>This application fetches weather data from the Open-Meteo API.</p>
+    <button onclick="getWeather()">Get Weather</button>
+    <p id="weatherInfo"></p>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #3730a3;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        #weatherInfo {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+    <script>
+        async function getWeather() {
+            const latitude = 52.52;
+            const longitude = 13.41;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,rain,precipitation`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch weather data');
+                }
+                const data = await response.json();
+                const currentWeather = data.current;
+                const weatherInfo = `Current temperature: ${currentWeather.temperature_2m}°C, Rain: ${currentWeather.rain}mm, Precipitation: ${currentWeather.precipitation}mm.`;
+                document.getElementById('weatherInfo').innerText = weatherInfo;
+            } catch (error) {
+                document.getElementById('weatherInfo').innerText = error.message;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -26,8 +26,5 @@ async function fetchData() {
     }
 
     tableHTML += `</table>`;
-    document.writeln(tableHTML);
+    document.getElementById("result").innerHTML = tableHTML;
 }
-
-
-//Assignment 2: FeedBack Submission From (post requeswt with json)

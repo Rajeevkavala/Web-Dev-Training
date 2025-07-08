@@ -46,8 +46,8 @@
     </style>
     <script>
         async function getWeather() {
-            const latitude = 52.52;
-            const longitude = 13.41;
+            const latitude = 17.4065;
+            const longitude = 78.4772;
             const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,rain,precipitation`;
             try {
                 const response = await fetch(url);
@@ -55,6 +55,7 @@
                     throw new Error('Failed to fetch weather data');
                 }
                 const data = await response.json();
+                console.log(data);
                 const currentWeather = data.current;
                 const weatherInfo = `Current temperature: ${currentWeather.temperature_2m}°C, Rain: ${currentWeather.rain}mm, Precipitation: ${currentWeather.precipitation}mm.`;
                 document.getElementById('weatherInfo').innerText = weatherInfo;

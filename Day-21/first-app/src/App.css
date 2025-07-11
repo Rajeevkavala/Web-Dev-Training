@@ -8,3 +8,29 @@ body {
   background-color: #f0f0f0;
   color: #333;
 }
+.App{
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 50px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+} 

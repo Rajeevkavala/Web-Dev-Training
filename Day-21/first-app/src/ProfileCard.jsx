@@ -1,6 +1,12 @@
 import image from './assets/unnamed.jpg';
 import Profile from './Profile';
 
+const ProfileStyle = {
+  color: 'blue',
+  fontSize: '20px',
+  textAlign: 'center'
+};
+
 function avatar(){
   return (
     <img src={image} alt="Profile Avatar" className="avatar" />

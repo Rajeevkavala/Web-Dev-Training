@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        h1, p {
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            max-width: 400px;
+            margin: 30px auto 10px auto;
+            padding: 24px 32px 16px 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="datetime-local"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 4px;
+            margin-bottom: 10px;
+            border: 1px solid #bfc9d1;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #f6f8fa;
+            transition: border 0.2s;
+        }
+        input:focus, textarea:focus, select:focus {
+            border: 1.5px solid #6366f1;
+            outline: none;
+            background: #fff;
+        }
+        button[type="submit"] {
+            background: #6366f1;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #4338ca;
+        }
+        hr {
+            margin: 30px auto 20px auto;
+            max-width: 420px;
+            border: none;
+            border-top: 1.5px solid #e0e7ef;
+        }
+        #eventsList {
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+        #eventsList > div {
+            animation: fadeIn 0.7s;
+        }
+        .event-title {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .event-category {
+            font-size: 0.95em;
+            color: #6366f1;
+            font-weight: 500;
+        }
+        .event-description {
+            color: #444;
+            font-size: 0.98em;
+        }
+        .event-countdown {
+            font-family: 'Fira Mono', monospace;
+            color: #0a0a23;
+            font-size: 1.1em;
+            margin: 4px 0 0 0;
+        }
+        .event-reminder {
+            color: #059669;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        .event-delete-btn {
+            background: #f87171;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 0.95em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .event-delete-btn:hover {
+            background: #dc2626;
+        }
+        @media (max-width: 600px) {
+            form, #eventsList {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>Dynamic Multi-Event Countdown with Alert</p>
+    <form id="eventForm">
+        <label>Event Title*:<br><input type="text" id="title" required></label><br>
+        <label>Description:<br><textarea id="description"></textarea></label><br>
+        <label>Date & Time*:<br><input type="datetime-local" id="datetime" required></label><br>
+        <label>Email for Reminder:<br><input type="email" id="email"></label><br>
+        <label>Category/Type*:<br>
+            <select id="category" required>
+                <option value="Birthday">Birthday</option>
+                <option value="Meeting">Meeting</option>
+                <option value="Holiday">Holiday</option>
+                <option value="Custom">Custom</option>
+            </select>
+        </label><br>
+        <button type="submit">Add Event</button>
+    </form>
+    <hr>
+    <div id="eventsList"></div>
+    <script>
+        function getCategoryIcon(cat) {
+            switch (cat) {
+                case 'Birthday': return '🎂';
+                case 'Meeting': return '📅';
+                case 'Holiday': return '🏖️';
+                default: return '🔔';
+            }
+        }
+
+        function loadEvents() {
+            return JSON.parse(localStorage.getItem('events') || '[]');
+        }
+        function saveEvents(events) {
+            localStorage.setItem('events', JSON.stringify(events));
+        }
+
+        function renderEvents() {
+            const events = loadEvents();
+            const now = new Date();
+            const list = document.getElementById('eventsList');
+            list.innerHTML = '';
+            if (events.length === 0) {
+                list.innerHTML = '<p>No events yet.</p>';
+                return;
+            }
+            events.forEach((event, idx) => {
+                const eventTime = new Date(event.datetime);
+                const diff = eventTime - now;
+                let countdown = '';
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const mins = Math.floor((diff / (1000 * 60)) % 60);
+                    const secs = Math.floor((diff / 1000) % 60);
+                    countdown = `${days} Days ${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+                } else {
+                    countdown = `🎉 ${event.title} is happening now!`;
+                }
+                const color = event.category === 'Birthday' ? '#ffe0e0' : event.category === 'Meeting' ? '#e0f0ff' : event.category === 'Holiday' ? '#e0ffe0' : '#f0e0ff';
+                list.innerHTML += `
+            <div style="border:1px solid #ccc;padding:10px;margin:10px 0;background:${color};position:relative;">
+                <span style="font-size:1.5em;">${getCategoryIcon(event.category)}</span>
+                <b class="event-title">${event.title}</b> <span class="event-category" style="color:#888;">(${event.category})</span><br>
+                <small class="event-description">${event.description ? event.description : ''}</small><br>
+                <span id="countdown-${idx}" class="event-countdown">${countdown}</span><br>
+                ${event.email ? `<span class="event-reminder" style='color:green;'>Email Reminder set</span>` : ''}
+                <button onclick="deleteEvent(${idx})" class="event-delete-btn">Delete</button>
+            </div>`;
+            });
+        }
+
+        setInterval(() => {
+            renderEvents();
+        }, 1000);
+
+        function deleteEvent(idx) {
+            if (confirm('Are you sure you want to delete this event?')) {
+                const events = loadEvents();
+                events.splice(idx, 1);
+                saveEvents(events);
+                renderEvents();
+            }
+        }
+
+        function checkReminders() {
+            const events = loadEvents();
+            const now = new Date();
+            events.forEach(event => {
+                if (event.email && !event.reminded) {
+                    const eventTime = new Date(event.datetime);
+                    const diff = eventTime - now;
+                    if (diff > 0 && diff < 1000 * 60 * 60 * 24 + 1000) { 
+                        alert(`Reminder: '${event.title}' is happening tomorrow. Email sent to: ${event.email}`);
+                        console.log(`Reminder: '${event.title}' is happening tomorrow. Email sent to: ${event.email}`);
+                        event.reminded = true;
+                        saveEvents(events);
+                    }
+                }
+            });
+        }
+        setInterval(checkReminders, 60000);
+
+        const form = document.getElementById('eventForm');
+        form.onsubmit = function (e) {
+            e.preventDefault();
+            const title = document.getElementById('title').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const datetime = document.getElementById('datetime').value;
+            const email = document.getElementById('email').value.trim();
+            const category = document.getElementById('category').value;
+            if (!title || !datetime || !category) {
+                alert('Please fill all required fields.');
+                return;
+            }
+            const eventTime = new Date(datetime);
+            if (eventTime <= new Date()) {
+                alert('Event date/time must be in the future.');
+                return;
+            }
+            const events = loadEvents();
+            events.push({ title, description, datetime, email, category });
+            saveEvents(events);
+            form.reset();
+            renderEvents();
+        };
+
+        renderEvents();
+    </script>
+
+</body>
+
+</html>

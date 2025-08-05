@@ -13,8 +13,8 @@ body {
   padding: 20px;
   display: flex;
   align-items: center;
-  height: 100vh;
   flex-direction: column;
+  margin: 20px;
   gap: 50px;
 }
 .card {
@@ -22,15 +22,54 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 300px;
+  width: 500px;
   text-align: center;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .card:hover{
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 } 
+.card img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+}
+.card p{
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+.footer {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
